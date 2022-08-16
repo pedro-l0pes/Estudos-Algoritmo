@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+<body>
+    <p>Canditado A: <input type="number" id="votosA"></p>
+    <p>Candidato B: <input type="number" id="votosB"></p>
+    <p>Em Branco: <input type="number" id="votosBranco"></p>
+    <p>Nulo: <input type="number" id="votosNulo"></p>
+    <button onclick="calcular_votos()">Calcular Votos</button>
+
+    <div id="resultado"></div>
+</body>
+<script>
+    function calcular_votos(){
+        resultado.innerHTML = 
+            "<b><p>Total de votos: " + (Number(votosA.value) + Number(votosB.value) + Number(votosBranco.value) + Number(votosNulo.value)) + "</p></b>" +
+            "<p>Candidato A: " + ( (Number(votosA.value) * 100)/(Number(votosA.value) + Number(votosB.value) + Number(votosBranco.value) + Number(votosNulo.value))) + 
+                "% ("+ Number(votosA.value) + " votos)</p>" +
+            "<p>Candidato B: " + ((Number(votosB.value) * 100)/(Number(votosA.value) + Number(votosB.value) + Number(votosBranco.value) + Number(votosNulo.value))) + 
+                "% ("+ (Number(votosB.value)) + " votos)</p>"+
+            "<p>Iválidos: " + (((Number(votosBranco.value) + Number(votosNulo.value))*100)/(Number(votosA.value) + Number(votosB.value) + Number(votosBranco.value) + Number(votosNulo.value))) + 
+                "% ("+ (Number(votosBranco.value) + Number(votosNulo.value)) + " votos)</p>"
+
+    }
+</script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 1</title>
+</head>
+<body>   
+    <h1><b>
+        Ola, mundo! Bem vindo a aula 1
+    </b></h1>
+        
+      
+    <p>Nome: <input type="Text" id="nome"/></p>
+    <p>Senha: <input type="Password" id="senha"/></p>
+    <p>Idade: <input type="Number" id="idade"/></p>
+
+    <button onclick="mostrar_nome()">
+        Mostrar nome
+    </button>
+
+    <button onclick="comprimentar()">
+        Comprimentar
+    </button>
+    
+    <button onclick="mostrar_mensagem()">
+        Mostrar mensagem
+    </button>
+    
+</body>
+<script>
+    function mostrar_mensagem(){
+        alert("Está é a primeira aula mexendo com código!")
+    }
+
+    function mostra_prompt(){
+           prompt("Gostando da aula??")
+    }
+    
+    function mostrar_nome(){
+        alert(nome.value)
+    }
+
+    function comprimentar(){
+        let senh = senha.value
+        let tamanho = senh.length
+        alert("Olá, "+nome.value+"! você tem " + idade.value + " anos e sua senha tem "+ tamanho +" caracteres")
+    }
+
+</script>
+</html>

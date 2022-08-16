@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 02</title>
+</head>
+<body>
+    <h1>Calculadora - ADSA</h1>
+
+    <p>Primeiro Nº <input type="number" id="n1"></p>
+    <p>Segundo Nº <input type="number" id="n2"></p>
+    <button onclick="somar(n1, n2);"> Somar </button>
+    <button onclick="subtrair(n1, n2)"> Subtrair </button>
+    <button onclick="multiplicar(n1, n2)"> Multiplicar </button>
+    <button onclick="dividir(n1, n2)"> Dividir </button>
+    <br>
+    <button onclick="elevar(n1, n2)"> Elevar </button>
+    
+    <div id="resultado"></div>
+</body>
+
+<script>
+    // operadores aritiméticos
+    // + * / ** -
+    function somar(x, y){
+        x = Number(x.value)
+        y = Number(y.value)
+
+        resultado.innerHTML = "<br><h2>Resultado: "+(x+y)+"</h2>"
+    }
+    function subtrair(x, y){
+        x = Number(x.value)
+        y = Number(y.value)
+
+        resultado.innerHTML = "<br><h2>Resultado: "+(x-y)+"</h2>"
+    }
+    function multiplicar(x, y){
+        x = Number(x.value)
+        y = Number(y.value)
+
+        resultado.innerHTML = "<br><h2>Resultado: "+(x*y)+"</h2>"
+    }
+    function dividir(x, y){
+        x = Number(x.value)
+        y = Number(y.value)
+
+        resultado.innerHTML = "<br><h2>Resultado: "+(x/y)+"</h2>"
+    }
+    function elevar(x, y){
+        x = Number(x.value)
+        y = Number(y.value)
+
+        resultado.innerHTML = "<br><h2>Resultado: "+(x**y)+"</h2>"
+    }
+
+
+</script>
+
+</html>
