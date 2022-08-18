@@ -13,15 +13,16 @@
 
     <div id="resultado"></div>
 </body>
-<script>
-function calcular_sono(){
-    resultado.innerHTML = 
-    "<p>Ao dormir " + h_sono.value + " horas, você dormiu:</p>" +
-    "<p>" + (h_sono.value * 0.05) + " horas na fase 1</p>" + 
-    "<p>" + (h_sono.value * 0.45) + " horas na fase 2</p>" + 
-    "<p>" + (h_sono.value * 0.30) + " horas na fase 3</p>" +
-    "<p>" + (h_sono.value * 0.20)+ " horas na fase REM</p>"
-}
 
-</script>
 </html>
+<script>
+    function calcular_sono(){
+        resultado.innerHTML = 
+        "<p>Ao dormir " + h_sono.value + " horas, você dormiu:</p>" +
+        "<p>" + (h_sono.value * 0.05) + " horas na fase 1</p>" + 
+        "<p>" + (h_sono.value * 0.45) + " horas na fase 2</p>" + 
+        "<p>" + (h_sono.value * 0.30) + " horas na fase 3</p>" +
+        "<p>" + (h_sono.value * 0.20)+ " horas na fase REM</p>"
+    }
+    
+</script>

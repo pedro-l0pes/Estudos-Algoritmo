@@ -15,17 +15,23 @@
 
     <div id="resultado"></div>
 </body>
+
+</html>
 <script>
     function calcular_votos(){
+        var total = Number(votosA.value) + Number(votosB.value) + Number(votosBranco.value) + Number(votosNulo.value);
+        var porcentagem_a = (Number(votosA.value) * 100)/total
+        var porcentagem_b = (Number(votosB.value) * 100)/total
+        var porcentagem_in = (Number(votosBranco.value) + Number(votosNulo.value) * 100)/total
+
         resultado.innerHTML = 
-            "<b><p>Total de votos: " + (Number(votosA.value) + Number(votosB.value) + Number(votosBranco.value) + Number(votosNulo.value)) + "</p></b>" +
-            "<p>Candidato A: " + ( (Number(votosA.value) * 100)/(Number(votosA.value) + Number(votosB.value) + Number(votosBranco.value) + Number(votosNulo.value))) + 
-                "% ("+ Number(votosA.value) + " votos)</p>" +
-            "<p>Candidato B: " + ((Number(votosB.value) * 100)/(Number(votosA.value) + Number(votosB.value) + Number(votosBranco.value) + Number(votosNulo.value))) + 
-                "% ("+ (Number(votosB.value)) + " votos)</p>"+
-            "<p>Iválidos: " + (((Number(votosBranco.value) + Number(votosNulo.value))*100)/(Number(votosA.value) + Number(votosB.value) + Number(votosBranco.value) + Number(votosNulo.value))) + 
-                "% ("+ (Number(votosBranco.value) + Number(votosNulo.value)) + " votos)</p>"
+           `<b><p>Total de votos: ${total} </p></b>
+            <p>Candidato A:${porcentagem_a}
+                % ( ${Number(votosA.value)} votos)</p> 
+            <p>Candidato B: ${porcentagem_b}
+                % ( ${Number(votosB.value)} votos)</p>
+            <p>Iválidos: ${porcentagem_in}
+                % ( ${Number(votosBranco.value) + Number(votosNulo.value)}   votos)</p>`
 
     }
 </script>
-</html>
