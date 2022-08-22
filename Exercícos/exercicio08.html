@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+</head>
+<body>
+    Ki base: <input type="number" id="input_ki_base">
+
+    <h3 >
+        Transformar em...
+    </h3>
+
+    <button onclick="ssj()">SSJ</button> 
+    <button onclick="ssj2()">SSJ2</button> 
+    <button onclick="ssj3()">SSJ3</button> 
+
+    <div id="resultado" style="font-family: 'Courier New', Courier, monospace;"></div>
+
+</body>
+</html>
+
+<script>
+
+    function ssj(){
+        var kiBase = Number(input_ki_base.value);
+        var tranformação_ki = kiBase * 50
+        
+        resultado.innerHTML = `<p>Após se transformar em SSJ, o ki desse Sayajin passa a ser de ${tranformação_ki}</p>`
+    }
+    function ssj2(){
+        var kiBase = Number(input_ki_base.value);
+        var tranformação_ki = kiBase * 100
+        
+        resultado.innerHTML = `<p>Após se transformar em SSJ, o ki desse Sayajin passa a ser de ${tranformação_ki}</p>`
+
+    }        
+    function ssj3(){
+        var kiBase = Number(input_ki_base.value);
+        var tranformação_ki = kiBase * 200
+        
+        resultado.innerHTML = `<p>Após se transformar em SSJ, o ki desse Sayajin passa a ser de ${tranformação_ki}</p>`
+    }
+
+</script>
