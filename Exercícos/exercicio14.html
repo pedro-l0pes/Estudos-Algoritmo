@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14</title>
+</head>
+<body>
+    Pimeira prograssão: <input type="number" id="pg1_input"> <br><br>
+    Razão: <input type="number" id="q_input"> <br><br>
+    O número (termo) da progressão deseja ver: <input type="number" id="n_input"> <br><br>
+
+    <button onclick="calcular_pg()">Calcular</button>
+
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+function calcular_pg(){
+    var pg1 = Number(pg1_input.value);
+    var q = Number(q_input.value);
+    var n = Number(n_input.value);
+    var pgn = pg1*(q**(n-1));
+
+
+    resultado.innerHTML = `O ${n}º termo nessa PG será ${pgn}`;
+}
+
+</script>

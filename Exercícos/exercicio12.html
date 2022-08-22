@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12</title>
+</head>
+<body>
+    Primeiro número(A): <input type="number" id="a_input"><br> <br>
+    Segundo número(B): <input type="number" id="b_input"><br> <br>
+
+    <button onclick="calcular_potencia()">Calcular</button>
+
+    <div id="resultado"></div>
+</body>
+</html>
+<script>
+function calcular_potencia(){
+    var numero1 = Number(a_input.value);
+    var numero2 = Number(b_input.value);
+    var res = numero1 ** numero2;
+
+    resultado.innerHTML = `${numero1} elevado a ${numero2} dá ${res}`;
+}
+
+</script>
