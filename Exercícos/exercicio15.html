@@ -11,7 +11,7 @@
     Taxa de juros a.m. (ao mês): <input type="number" id="input_taxa_juros"> <br><br>
     Quantidade de parcelas: <input type="number" id="input_qtd_parcelas"> <br><br>
 
-    <button onclick="calcularJuros()">Calcular</button>
+    <button onclick="calcularJuros()">Calcular prejú</button>
 
     <div id="res"></div>
 
@@ -22,10 +22,6 @@
     function calcularJuros() {
         var total = (Number(input_valor_carro.value)/Number(input_qtd_parcelas.value))*((Number(input_taxa_juros.value)/100)+1)**(Number(input_qtd_parcelas.value)-1)
         var qtd_carros_pagos = (total/Number(input_qtd_parcelas.value))
-
-        
-        res.innerHTML = `Seu carro vai sair por um total de R$ ${total}. Após 1 mês, ele já vai valer só R$B.
-         Porque comprou financiado, vai pagar o correspondente a ${qtd_carros_pagos} carros`
 
     }
 
