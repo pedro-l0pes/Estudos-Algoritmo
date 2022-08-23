@@ -23,10 +23,6 @@
         var total = (Number(input_valor_carro.value)/Number(input_qtd_parcelas.value))*((Number(input_taxa_juros.value)/100)+1)**(Number(input_qtd_parcelas.value)-1)
         var qtd_carros_pagos = (total/Number(input_qtd_parcelas.value))
 
-        
-        res.innerHTML = `Seu carro vai sair por um total de R$ ${total}. Após 1 mês, ele já vai valer só R$B.
-         Porque comprou financiado, vai pagar o correspondente a ${qtd_carros_pagos} carros`
-
     }
 
 
