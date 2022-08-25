@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Document</title>
 </head>
 <body>
@@ -13,17 +14,25 @@
 
     <button onclick="calcularJuros()">Calcular prejú</button>
 
-    <div id="res"></div>
+    <div id="resultado"></div>
 
 </body>
 </html>
 
 <script>
     function calcularJuros() {
-        var total = (Number(input_valor_carro.value)/Number(input_qtd_parcelas.value))*(((Number(input_taxa_juros.value)/100)+1)**(Number(input_qtd_parcelas.value)-1))
-        var qtd_carros_pagos = (total/Number(input_qtd_parcelas.value))
+    var pg1 = Number(input_valor_carro.value)/Number(input_qtd_parcelas.value);
+    var q =(Number(input_taxa_juros.value)/100) + 1;
+    var n = Number(input_qtd_parcelas.value);
+    var total = pg1*(q**(n-1)) + Number(input_valor_carro.value);
+    var qtd_carros = total/Number(input_valor_carro.value)
 
-    }
+
+    resultado.innerHTML = `O Seu carro vai sair por um total de R$ ${total}. Após 1 mês, ele já vai valer só R$B. Porque comprou financiado, vai pagar o correspondente a ${qtd_carros} carros;
+
+`;
+ 
+}
 
 
 </script>

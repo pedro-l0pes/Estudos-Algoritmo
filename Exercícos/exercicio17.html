@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p> Valor guardado no cofrinho: R$<i id="dinheiro"> 0.00</i></p>
+    <p> Valor que irá depositar: <input type="number" id="deposito"></p>
+    <button onclick="depositar()">Depositar</button>
+    <button onclick="sacar_tudo()">Sacar</button> 
+
+    <p> Quantidade de depósitos feitos: <b id="quant_depositos">0</b></p>
+    <p> Quantidade de retiradas feitas:  <b id="quant_saques">0</b></p>
+
+    
+</body>
+</html>
+
+<script>
+    var saldo = 0.0
+    var cont_saque = 0
+    var cont_doposito = 0
+
+    function depositar(){
+        cont_doposito = Number(quant_depositos.innerHTML) + 1;
+        saldo = Number(deposito.value) + saldo;
+        dinheiro.innerHTML = saldo;
+        quant_depositos.innerHTML = cont_doposito;
+
+    }
+    function sacar_tudo(){
+        saldo = 0.0
+        cont_saque = Number(quant_saques.innerHTML) + 1
+        dinheiro.innerHTML = saldo;
+        quant_saques.innerHTML = cont_saque
+    }
+
+</script>
