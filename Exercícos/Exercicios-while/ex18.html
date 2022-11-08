@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    ônibus precisa pegar: <input type="text" id="onibus_input">
+    trens precisa pegar: <input type="text" id="trens_input">
+    metrôs precisa pegar: <input type="text" id="metros_input">
+    <br>
+    <button onclick="trajeto()">
+        "#Partiu Trajeto"
+    </button>
+
+    <div id="resultado">
+    </div>
+
+</body>
+</html>
+
+<script>
+    function trajeto(){
+        resultado.innerHTML = "";
+        var contador = 1;
+        while (contador <= Number(onibus_input.value)){
+            resultado.innerHTML += `<span style="color:red">Pegando o ${contador}º busão</span><br>`;
+            contador++;
+        }
+        contador = 1;
+        while (contador1 <= Number(trens_input.value)){
+            resultado.innerHTML += `<span style="color:green">Pegando o ${contador1}º trem</span><br>`;
+            contador1++;
+        }
+        contador = 1;
+        while (contador2 <= Number(metros_input.value)){
+            resultado.innerHTML += `<span style="color:blue">Pegando o ${contador2}º metro</span><br>`;
+            contador2++;
+        }
+        
+    }
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 10</title>
+</head>
+<body>
+    Digite um número qualquer: <input type="number" id="ipt_numero">
+    <button onclick="analisar()">Analisar histórico</button>
+
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    historico = [];
+    function analisar() {
+        resultado.innerHTML = "";
+        historico.push(ipt_numero.value)
+        var maior = historico[0];
+        var menor = historico[0];
+        for(var i=0; i<historico.length; i++) {
+            resultado.innerHTML +=  `${i+1}º Número: ${historico[i]}<br>`;
+            if(maior < historico[i]){
+                maior = historico[i];
+            }
+            if (menor > historico[i]){
+                menor = historico[i];
+            }
+        }
+        resultado.innerHTML += `Maior: ${maior}<br>Menor: ${menor}`;
+    }
+</script>

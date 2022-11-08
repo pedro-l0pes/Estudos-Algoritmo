@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Idade: <input type="number" id="in_idade">
+    Peso: <input type="number" id="in_peso">
+    <button onclick="verificarBricadeira()">Pode brincar?</button>
+
+    <span id="resultado"></span>
+</body>
+</html>
+
+<script>
+    function verificarBricadeira(){
+        if(Number(in_idade.value)> 15 && Number(in_peso.value)){
+            resultado.innerHTML = "Você poderá brincar &smile; "
+        }else{
+            resultado.innerHTML = "Você não poderá brincar Triste "
+        }
+    }
+
+</script>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 12</title>
+</head>
+<body>
+    RA: <input type="number" id="ipt_ra">
+    NOTA: <input type="number" id="ipt_nota">
+    <button onclick="cadastrar()">guardar</button><br>
+    
+    Digite P ou I: <input id="ipt_poui" onkeyup="alertar()"><br>
+    <button onclick="analisar()">Analisar</button>
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    const listaAlunos = [];
+    function cadastrar() {
+        const ra = Number(ipt_ra.value);
+        const nota = Number(ipt_nota.value).toFixed(1);
+        listaAlunos.push({"ra":ra, "nota":nota});
+    }
+
+    function alertar() {
+        const poui = ipt_poui.value.trim().toLowerCase();
+        if (poui.indexOf("i") < 0 && poui.indexOf("p") < 0){
+            alert("Digite ou p ou i")
+            ipt_poui.value = "";
+        }
+    }
+
+
+    function analisar() {
+        resultado.innerHTML = "";
+        const notaTotal = 0;
+        const qtdNotas = 0;
+        const poui = ipt_poui.value.trim().toLowerCase();
+        const novaListaAlunos = []
+        for (var i = 0; i < listaAlunos.length; i++) {
+            if (poui == "p"){
+                if (listaAlunos[i].ra % 2 == 0){
+                    notaTotal += Number(listaAlunos[i].nota);
+                    qtdNotas++;
+                    novaListaAlunos.push({"ra":listaAlunos[i].ra, "nota": listaAlunos[i].nota});
+                }
+            } else {
+                if (listaAlunos[i].ra % 2 != 0){
+                    notaTotal += Number(listaAlunos[i].nota);
+                    qtdNotas++;
+                    novaListaAlunos.push({"ra":listaAlunos[i].ra, "nota": listaAlunos[i].nota});
+            }
+        }
+        }
+
+        const media = notaTotal/qtdNotas;
+        notaTotal = 0;
+        qtdNotas = 0;
+        for (var i = 0; i <novaListaAlunos.length; i++){
+            if (media <= novaListaAlunos[i].nota) {
+                if (media < Number(novaListaAlunos[i].nota)){
+                    qtdNotas++
+                    notaTotal += Number(novaListaAlunos[i].nota);
+                }
+                resultado.innerHTML += ` Aluno com RA = ${novaListaAlunos[i].ra} e nota ${novaListaAlunos[i].nota} foi selecionado pois a média é ${media}<br>`;
+            }
+        }
+        resultado.innerHTML += `qtd. nota acima da média: ${qtdNotas}<br>nova média: ${notaTotal/qtdNotas}`;
+    }
+</script>

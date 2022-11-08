@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 8</title>
+</head>
+<body>
+    Nota: <input type="number" id="ipt_nota">
+    <button onclick="cadastrar()">Cadastrar nota</button><br>
+    Intervalo: <input type="number" id="ipt_inicial"> <input type="number" id="ipt_final"><br>
+    
+    <button onclick="rever()">Rever as notas</button>
+    <div id="resultado"></div>
+
+
+</body>
+</html>
+
+<script>
+    var listaNotas = [];
+    function cadastrar() {
+        listaNotas.push(ipt_nota.value);
+    }
+
+    function rever() {
+        resultado.innerHTML = "";
+        var tamanhoLista = listaNotas.length;
+        var contador = 0;
+        var contadorAparicoes = 0;
+        var inicial = Number(ipt_inicial.value);
+        var final = Number(ipt_final.value);
+        var notaTotal = 0;
+        while (contador < tamanhoLista) {
+            if (contador >= inicial && contador <= final) {
+                notaTotal += listaNotas[contador];
+                contadorAparicoes++
+                resultado.innerHTML += `${listaNotas[contador]}<br>`;
+            }
+            contador++;
+        }
+        resultado.innerHTML += `Foram cadastras ${contadorAparicoes} notas que estão no intervalo de ${inicial} até ${final} e a média dessas notas é ${notaTotal/contadorAparicoes}`;
+    }
+</script>

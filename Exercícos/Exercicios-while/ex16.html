@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantas pesssoas vão entrar no carro<input id="qtd_pessoas">
+    <button onclick="carona()">#Partiu Carona</button>
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    function carona(){
+        contador = 1;
+        while (contador <= Number(qtd_pessoas.value)){
+            if (contador > 5){
+                resultado.innerHTML += `Entrou o ${contador}º terá que esperar<br>`;
+            }else {     
+                resultado.innerHTML += `Entrou o ${contador}º passageiro<br>`;
+            }
+            if (contador == 1){
+                resultado.innerHTML = resultado.innerHTML.replace("<br>", "")
+                resultado.innerHTML += ` (que é o(a) motorista)<br>` 
+            }
+            ++contador;
+        }
+        
+    }
+</script>

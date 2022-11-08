@@ -24,11 +24,13 @@
     var pg1 = Number(input_valor_carro.value)/Number(input_qtd_parcelas.value);
     var q =(Number(input_taxa_juros.value)/100) + 1;
     var n = Number(input_qtd_parcelas.value);
-    var total = pg1*(q**(n-1)) + Number(input_valor_carro.value);
+    var total = (pg1*((q**n)-1))/(q -1);
     var qtd_carros = total/Number(input_valor_carro.value)
+    var apos_um_mes = Number(input_valor_carro.value)*0.80
 
 
-    resultado.innerHTML = `O Seu carro vai sair por um total de R$ ${total}. Após 1 mês, ele já vai valer só R$B. Porque comprou financiado, vai pagar o correspondente a ${qtd_carros} carros;
+    resultado.innerHTML = `O Seu carro vai sair por um total de R$ ${total.toFixed(2)}. Após 1 mês, ele já vai valer só R$ ${apos_um_mes}. Porque comprou financiado,
+     vai pagar o correspondente a ${qtd_carros.toFixed(1)} carros;
 
 `;
  

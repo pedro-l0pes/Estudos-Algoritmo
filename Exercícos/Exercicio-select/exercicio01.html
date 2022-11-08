@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="numeros">
+        <option value="4">Janeiro</option>
+        <option value="4">Fevereiro</option>
+        <option value="1">Março</option>
+        <option value="1">Abril</option>
+        <option value="1">Maio</option>
+        <option value="2">Junho</option>
+        <option value="2">Julho</option>
+        <option value="2">Agosto</option>
+        <option value="3">Setembro</option>
+        <option value="3">Outubro</option>
+        <option value="3">Novembro</option>
+        <option value="4">Desembro</option>
+    </select>
+    <button onclick="verificar_estacoes()">Ver estação</button>
+</body>
+</body>
+</html>
+
+<script>
+    function verificar_estacoes(){
+        if (Number(numeros.value) == 1) {
+            alert("PRIMAVERA")
+        } else if (Number(numeros.value) == 2) {
+            alert("VERÃO")
+        } else if (Number(numeros.value) == 3) {
+            alert("OUTONO")
+        } else if (Number(numeros.value) == 4) {
+            alert("INVERNO")
+        } else {
+            alert('essta estação não exite')
+        }
+    }
+</script>

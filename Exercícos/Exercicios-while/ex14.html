@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Idade: <input type="number" id="input_idade" onkeyup="contagemIdade()">
+    <div id="resultado"></div>
+</body>
+
+</html>
+
+<script>
+    function contagemIdade() {
+        resultado.innerHTML = "";
+        var idade = Number(input_idade.value);
+        var contador = 1;
+        
+        while (contador <= idade) {
+            resultado.innerHTML += `${contador}anos`;
+            if (contador <= 4) {
+                resultado.innerHTML += "(Primeira infância)<br>";
+            }
+            else if (contador <= 6) {
+                resultado.innerHTML += "(Pré-escolar)<br>";
+            }
+            else if (contador <= 10) {
+                resultado.innerHTML += "(Segunda infância)<br>";
+            }
+            else if (contador <= 18) {
+                resultado.innerHTML += "(Adolescência)<br>";
+            }
+            else if (contador <= 50) {
+                resultado.innerHTML += "(Adulto)<br>";
+            }
+            else if (contador <= 100) {
+                resultado.innerHTML += "(Melhor idade)<br>";
+            }
+            else {
+                resultado.innerHTML += "(Ancião)<br>";
+            }
+            contador++;
+        }
+    }
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+</head>
+<body>
+    Digite seu filme favorito <input type="text" id="ipt_local">
+    <button onclick="cadastrar()">Cadastrar local</button><br>
+    Digite um número: <input type="number" id="ipt_numero">   
+    <button onclick="relembrar()">Relembrar viagem</button>
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    var viagens = [];
+    function cadastrar(){
+       viagens.push(ipt_local.value);
+    }
+
+    function relembrar(){
+       var numeroViagem = Number(ipt_numero.value)-1;
+        
+        if (numeroViagem < viagens.length){
+            resultado.innerHTML = viagens[numeroViagem]; 
+        }else {
+            resultado.innerHTML = `Você não fez uma ${numeroViagem+1}ª viagem!`
+        }
+    }
+</script>

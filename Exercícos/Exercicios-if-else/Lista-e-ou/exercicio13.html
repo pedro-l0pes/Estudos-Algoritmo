@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Qual a sua nota de avaliação do atendimento? De 1 a 5: <input type="text" id="nota"><br>
+    <button onclick="verifica()">Avaliar</button>
+    <br><img src="" alt="" id="imgAvalia">
+    <div id="divResultado"></div>
+</body>
+
+</html>
+
+<script>
+    var estrelas = 0;
+    function verifica() {
+        estrelas = Number(nota.value);
+
+        if(estrelas <0 || estrelas >5){
+            alert("Nota inválida. Digite de 0 a 5");
+        }
+        else{
+            avaliar();
+        }
+
+    }
+    function avaliar(){
+        if(estrelas < 0.5){
+            divResultado.innerHTML=``;
+            imgAvalia.src = `0.jpg`;
+        }
+        else if(estrelas < 1){
+            imgAvalia.src = `0.5-estrelas.jpg`;
+        }
+        else if(estrelas < 1.5){
+            imgAvalia.src = `1-estrelas.jpg`;
+        }
+        else if(estrelas < 2){
+            imgAvalia.src = `1.5-estrelas.jpg`;
+        }
+        else if(estrelas < 2.5){
+            imgAvalia.src = `2-estrelas.jpg`;
+        }
+        else if(estrelas < 3){
+            imgAvalia.src = `2.5-estrelas.jpg`;
+        }
+        else if(estrelas < 3.5){
+            imgAvalia.src = `3-estrelas.jpg`;
+        }
+        else if(estrelas < 4){
+            imgAvalia.src = `3.5-estrelas.jpg`;
+        }
+        else if(estrelas < 4.5){
+            imgAvalia.src = `4-estrelas.jpg`;
+        }
+        else if(estrelas < 5){
+            imgAvalia.src = `4.5-estrelas.jpg`;
+        }
+        else{
+             imgAvalia.src = `5-estrelas.jpg`;
+        }
+        }
+</script>

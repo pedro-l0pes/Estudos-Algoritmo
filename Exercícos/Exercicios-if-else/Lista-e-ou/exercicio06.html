@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="forma_pagamento">
+        <option value="debito">Débito</option>
+        <option value="credito">Crédito</option>
+        <option value="boleto">Boleto</option>
+        <option value="dinheiro">Dinheiro</option>
+    </select>
+    <!-- OUTRA FORMA 
+        <select id="forma_pagamento">
+        <option value="vista">Débito</option>
+        <option value="parcelado">Crédito</option>
+        <option value="vista">Boleto</option>
+        <option value="parcelado">Dinheiro</option>
+    </select> -->
+
+    <button onclick="analisar_compra()">Analisar compra</button>
+</body>
+</html>
+
+<script>
+    function analisar_compra() {
+        if (forma_pagamento.value == "debito" || forma_pagamento.value == "dinheiro"){
+            alert( "Você terá que pagar a vista")
+        } else {
+            alert("Pagamento poderá ser parcelado")
+        }
+    }
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+<body>
+    Digite seu filme favorito <input type="text" id="ipt_filme">
+    <button onclick="cadastrar()">Cadastrar</button>
+
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    
+    var listaFilmes = [];
+    function cadastrar() {
+
+        listaFilmes.push(ipt_filme.value);
+        
+        var terceiroFilme = "Ainda não existe";
+        if (listaFilmes.length > 2){
+            terceiroFilme  = `${listaFilmes[2]}`
+        }
+
+        resultado.innerHTML = `
+        Seu filme favorito: ${listaFilmes[0]}
+        <br>
+        Seu 3º filme favorito: ${terceiroFilme}
+        <br>
+        Total de filmes cadastrados: ${listaFilmes.length}
+        `;
+
+    }
+</script>

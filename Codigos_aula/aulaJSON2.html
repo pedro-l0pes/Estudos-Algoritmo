@@ -1,0 +1,48 @@
+<!-- AULA DE JSON -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+    <input placeholder="Insira o nome " type="text"  id="inp_nome">
+    <input placeholder="Insira o sobrenome" type="text"  id="inp_sobrenome">
+    <input placeholder="Insira a idade" type="number"  id="inp_idade">
+    <button onclick="exibir()">Exibir</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function exibir() {
+        let nome = inp_nome.value;
+        let sobrenome = inp_sobrenome.value;
+        let idade = Number(inp_idade.value);
+        
+        let pessoa = {
+            nome,
+            sobrenome,
+            idade
+        };
+
+        
+        const ano = 2022;
+
+        pessoa.nome = nome;
+        pessoa.sobrenome = sobrenome;
+        pessoa.idade = idade;
+
+        
+        div_mensagem.innerHTML = `
+            <br>
+            Olá, ${pessoa.nome} ${pessoa.sobrenome}, seja bem vindo!<br>
+            Você nasceu em ${ano - pessoa.idade}?
+        `;
+    }
+
+</script>

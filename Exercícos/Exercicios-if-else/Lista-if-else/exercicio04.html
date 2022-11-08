@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Valor da pizza: <input type="number" id="valor_pizza">  <br><br>
+    Defina o valor máximo para cada amigo: <input type="number" id="maximo_amigo">  <br><br>
+    Quantidade de amigos reunidos: <input type="number" id="qtd_amigos"><br><br>
+
+    <button onclick="calcular()">
+        Rola a pizza?
+    </button><br><br>
+
+    <div id="resultado"></div>
+</body>
+</html>
+<script>
+    function calcular() {
+        var divisao =  Number(valor_pizza.value)/Number(qtd_amigos.value);
+
+        resultado.innerHTML = `Cada amigo vai pagar 
+            ${divisao.toLocaleString("pt-BR", {style:"currency", currency: "BRL", maximumFractionDigits:2})} 
+            pela pizza<br>`;
+
+        if (divisao <= Number(maximo_amigo.value)) {
+            resultado.innerHTML += "Uhu! Vamos pedir a pizza!";
+        } else {
+            resultado.innerHTML += "Deu ruim! Pizza muito cara!";
+        }
+    }
+</script>

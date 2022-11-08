@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantas latinhas de refrigerante toma por dia 
+    <input type="number" id="input_refris">
+
+    <button onclick="calcule()">Quantos refris?</button><br><br>
+
+    <div id="resultado"></div>
+</body>
+</html>
+<script>
+    function calcule(){
+        qtd_refris_ano = Number(input_refris.value)*365;
+
+        resultado.innerHTML = `Quantidade de latinhas por ano: ${qtd_refris_ano}.<br>`
+        if (qtd_refris_ano >= 500) {
+            resultado.innerHTML += "<br>Cuide melhor da sua saúde!"
+        }
+
+    }
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade Pão: <input type="number" id="qtd_pao">  <br><br>
+    Quantidade Pacote de bolacha: <input type="number" id="qtd_pacoteb">  <br><br>
+    Quantidade Achocolatado: <input type="number" id="qtd_achocolatado">  <br><br>
+
+    <button onclick="verificar_caloria()">
+        Verificar Caloria
+    </button><br><br>
+
+    <div id="resultado"></div>
+</body>
+</html>
+<script>
+    function verificar_caloria() {
+        caloria = (Number(qtd_achocolatado.value)*70)+(Number(qtd_pao.value)*50)+(Number(qtd_pacoteb.value)*80);
+        
+        if (caloria < 200) {
+            resultado.innerHTML = "Está perdendo peso";
+        } else if (caloria <= 400) {
+            resultado.innerHTML = "Nem lá, nem cá. Vai manter a forma.";
+        } else {
+            resultado.innerHTML = "Forte tendência á ganhar peso !";
+        }
+
+    }
+        
+</script>

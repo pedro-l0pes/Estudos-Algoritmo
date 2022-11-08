@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Receba do usuário um número (tem que ser entre 20 e 100); <input type="number" id="numero">
+    <button onclick="multiplos5()">Adoro múltiplos de 5</button>
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    function multiplos5() {
+        if (Number(numero.value) < 20 || Number(numero.value) > 100){
+            alert("O número está fora do intervalo estipulado");
+        }else {
+            var contador = 0;
+            while(contador <= Number(numero.value)){
+                if (contador % 5 == 0){
+                    resultado.innerHTML += `${contador}, `;
+                }
+                contador += 1;
+            }
+        }
+        
+    }
+</script>

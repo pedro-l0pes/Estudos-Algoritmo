@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Temperatura: <input type="text" id="temp"><br><br>
+    <button onclick="verificar_temp()">Verificar Temperatura</button>
+    <div id="resultado"></div>
+</body>
+</html>
+<script>
+    function verificar_temp() {
+        // Congelante (até menos de 14ºC)
+        // Com Frio (entre 14ºC e 21ºC)
+        // Confortável (mais de 21ºC até 24ºC)
+        // Com Calor (mais de 24ºC até 31ºC)
+        // Calor escaldante (mais de 31ºC)
+                
+        
+        if (Number(temp.value) < 14) {
+            alert('Congelante');
+        }else if (Number(temp.value) <= 21){
+            alert('Com Frio');
+        }else if (Number(temp.value) <= 24){
+            alert('Confortável')
+        }else if (Number(temp.value) <= 31){
+            alert('Com Calor')
+        }
+        else{
+            alert('Calor escaldante')
+        }
+    }
+</script>

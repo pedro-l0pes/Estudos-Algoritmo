@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Você já clicou <b id="numero_cliques">0</b> vezes</span><br><br>
+    <button onclick="verificar_click()">Classificar aluno</button>
+    <div id="resultado"></div>
+</body>
+</html>
+<script>
+    cliques = 0;
+    function verificar_click() {
+        
+        // a) A tela deve ter o texto "Você já clicou 0 vezes";
+        // b) Ao clicar em "Clica aqui", o contador do texto em a) aumenta. De 0 vai pra 1, depois pra 2, depois pra 3 e assim por diante
+        // c) Além de atualizar o contador, exiba umas dessas frases abaixo da frase em a)
+        // "Dedo fraquinho, hein ;(", enquanto clicou menos de 5 vezes
+        // "Na média - não me impressiona ..." enquanto clicou entre 5 e 10 vezes
+        // "Está treinando em casa !", enquanto clicou entre 11 e 15 vezes
+        // "Mestre dos cliques !!!", enquanto clicou mais de 15 vezes
+
+        cliques += 1;      
+        numero_cliques.innerHTML = cliques
+        if (cliques < 5) {
+            resultado.innerHTML = "Dedo fraquinho, hein ;(";
+        }else if (cliques <= 7){
+            resultado.innerHTML = "Na média - não me impressiona ...";
+        }else if (cliques <= 9.5){
+            resultado.innerHTML = "Está treinando em casa !";
+        }
+        else{
+            resultado.innerHTML = "Mestre dos cliques !!!";
+
+        }
+        numero_cliques.innerHTML = cliques
+    }
+</script>

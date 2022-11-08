@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<body>
+    Digite o nome do aluno: <input type="text" id="ipt_aluno"><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="pesquisar()">Pesquisar</button>
+
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    
+    var listaAlunos = [];
+    function cadastrar() {
+        var verificador = 0;
+        resultado.innerHTML = "";
+        listaAlunos.push(ipt_aluno.value.trim().toUpperCase())
+        var contador = 0;
+        while (contador < listaAlunos.length){
+            resultado.innerHTML += `${listaAlunos[contador]}<br>`;
+            contador++;
+        }
+    }
+
+    function pesquisar(){
+        var contador = 0
+        var verificador = 0
+        while(contador < listaAlunos.length){
+            if (listaAlunos[contador] == ipt_aluno.value.trim().toUpperCase()) {
+                verificador++
+            }
+            contador++;
+        }
+        if(verificador > 0){
+            alert(`O aluno ${ipt_aluno.value.trim().toUpperCase()} apareceu ${verificador} vez(es)`)
+        }
+    }
+</script>

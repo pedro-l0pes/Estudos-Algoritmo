@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="${ano}-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Ano: 
+    <input type="number" id="in_ano">
+    <button onclick="verificar()">Ver Fato</button> <br>
+    <span id="resultado"></span>
+</body>
+</html>
+
+<script>
+    function verificar(){
+        var ano = Number(in_ano.value) 
+
+        if (ano < 1965){
+            resultado.innerHTML = `No ano ${ano} o email nem havia sido criado ainda...`  
+        } else if (ano == 1965){
+            resultado.innerHTML = `No ano ${ano} o email estava sendo criado ... `
+        } else if (ano <= 1969) {
+            resultado.innerHTML = `No ano ${ano} o email já havia sido criado ...`
+        } else {
+            resultado.innerHTML = `No ano ${ano} o email já havia sido aprimorado - Poderia ser enviado para outro computador ...`
+        }
+    }
+
+</script>

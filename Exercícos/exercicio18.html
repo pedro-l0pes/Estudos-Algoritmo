@@ -7,6 +7,67 @@
     <title>Document</title>
 </head>
 <body>
+    <p>Porções de pão francês: <span id="pao">0</span></p> 
+    <p>Porções de carne boniva: <span id="carne_boi">0</span></p>
+    <p>Porções de carne de soja: <span id="carne_soja">0</span></p>
+    <p>Porções de arroz com feijão: <span id="arr_fei" >0</span></p>
+    <b>Total de calorias: <span id="num_total">0</span></b>  <br> <br>
     
+
+
+    <button onclick="comer_pao()">Comer um pão francês</button> 
+    <button onclick="comer_carne_b()">Comer um carne bolvina</button>
+    <button onclick="comer_carne_ds()">Comer porção de carne de soja</button>
+    <button onclick="comer_arr_fei()">Comer porção de arroz com feijão</button>
+    <button onclick="recomecar()">Recomeçar</button>
 </body>
 </html>
+
+<script>
+    var carne_b = 0;
+    var carne_ds = 0;
+    var arros_feijao = 0;
+    var pao_f = 0;
+    var total = 0;
+
+    function comer_pao(){
+        pao_f += 1;
+        total += 50;
+        pao.innerHTML = pao_f;
+        num_total.innerHTML = total;
+    }
+
+    function comer_carne_b(){
+        carne_b += 1;
+        total  += 100;
+        carne_boi.innerHTML = carne_b;
+        num_total.innerHTML = total;
+    }
+
+    function comer_carne_ds(){
+        carne_ds +=  1;
+        total  += 30;
+        carne_soja.innerHTML = carne_ds;
+        num_total.innerHTML = total;
+    }
+
+    function comer_arr_fei(){
+        arros_feijao += 1;
+        total  += 120;
+        arr_fei.innerHTML = carne_ds;
+        num_total.innerHTML = total;
+    }
+
+    function recomecar(){
+        carne_b = 0;
+        carne_ds = 0;
+        arros_feijao = 0;
+        pao_f = 0;
+        total = 0;
+        pao.innerHTML = pao_f;
+        carne_boi.innerHTML = carne_b;
+        carne_soja.innerHTML = carne_ds;
+        arr_fei.innerHTML = arros_feijao;
+        num_total.innerHTML = total
+    }
+</script>

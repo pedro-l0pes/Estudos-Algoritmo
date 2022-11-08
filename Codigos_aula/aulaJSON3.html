@@ -1,0 +1,63 @@
+<!-- AULA DE JSON -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+    <h3>Aluno: </h3><br>
+
+    <input placeholder="Insira o nome " type="text"  id="inp_nome_aluno"><br>
+    <input placeholder="Insira o sobrenome" type="text"  id="inp_sobrenome_aluno"><br><br>
+
+
+    <h3>Responsavel: </h3><br>
+
+    <input placeholder="Insira o nome " type="text"  id="inp_nome_responsavel"><br>
+    <input placeholder="Insira o sobrenome" type="text"  id="inp_sobrenome_responsavel"><br><br>
+
+    <button onclick="exibir()">Exibir</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function exibir() {
+        var aluno = {
+            nome : inp_nome_aluno.value,
+            sobrenome : inp_sobrenome_aluno.value,
+        };
+
+        var responsavel = {
+            nome : inp_nome_responsavel.value,
+            sobrenome : inp_sobrenome_responsavel.value,
+        };
+        const ano = 2022;
+        
+        responsavel.indentidade = {
+            tipo : "RG",
+            numero : "21.123.123.X"
+        }
+        
+        div_mensagem.innerHTML = `
+            <br>
+            <b>DADOS RESPONSAVEL:</b><br>
+            Nome: ${responsavel.nome} <br>
+            Sobrenome: ${responsavel.sobrenome}<br>
+            Intetidade: ${responsavel.indentidade.tipo}<br>
+            Nº do ${responsavel.indentidade.tipo}: ${responsavel.indentidade.numero}
+            <br><br>
+
+            <b>DADOS ALUNO:</b> <br>
+            Nome: ${aluno.nome} <br>
+            Sobrenome: ${aluno.sobrenome} <br><br>
+
+        `;
+    }
+
+</script>

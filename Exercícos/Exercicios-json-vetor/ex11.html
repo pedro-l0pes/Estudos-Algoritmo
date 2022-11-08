@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 8</title>
+</head>
+<body>
+    Dia do depósito: <input type="number" id="ipt_dia">
+    Valor do depósito: <input type="number" id="ipt_deposito">
+    <button onclick="cadastrar()">guardar</button><br>
+    Intervalo: <input type="number" id="ipt_inicio"> <input type="number" id="ipt_final"><br>
+    
+    <button onclick="rever()">Rever Depósitos</button>
+    <div id="resultado"></div>
+
+
+</body>
+</html>
+
+<script>
+    const listaDepositos = [];
+    function cadastrar() {
+        const dia = Number(ipt_dia.value);
+        const deposito = Number(ipt_deposito.value);
+        listaDepositos.push({"dia":dia, "deposito":deposito});
+    }
+
+    function rever() {
+        resultado.innerHTML = "";
+        const inicio = Number(ipt_inicio.value);
+        const final = Number(ipt_final.value);
+        const total = 0;
+        const qtdDias = 0;
+        for (var i = 0; i < listaDepositos.length;i++){
+            var cor = "";        
+            if (i % 2 == 0){
+                cor = "lightblue";
+            } else {
+                cor = "lightgreen";
+            }
+            if (i >= inicio && i <= final){
+                resultado.innerHTML += `<span style="background-color:${cor};">dia = ${listaDepositos[i].dia} Valor depositado = ${listaDepositos[i].deposito.toLocaleString('pt-BR',    { style: 'currency', currency: 'BRL'})}<br></span>`;
+                qtdDias++;
+                total += Number(listaDepositos[i].deposito);
+            }
+        }
+        resultado.innerHTML += `Total: ${total.toLocaleString('pt-BR',    { style: 'currency', currency: 'BRL'})}<br>Média: ${(total/qtdDias).toLocaleString('pt-BR',    { style: 'currency', currency: 'BRL'})}<br>Qtd de dias: ${qtdDias}`;
+    }
+</script>

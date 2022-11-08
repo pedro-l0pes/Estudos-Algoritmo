@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite um numero: <input type="number" id="digite" onkeyup="xACem()">
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    function xACem (){
+        resultado.innerHTML = "";
+        for (
+            var contador = Number(digite.value);
+            contador <= 100;
+            contador++
+        ) {
+            resultado.innerHTML += `${contador} `;
+            if (contador % 15 == 0) {
+                resultado.innerHTML += "É TRI e PENTA<br>";
+            } else if (contador % 3 == 0) {
+                resultado.innerHTML += "É TRI<br>";
+            } else if (contador % 5 == 0) {
+                resultado.innerHTML += "É PENTA<br>";
+            } else {
+                resultado.innerHTML += "<br>";                
+            }
+        }
+    }
+</script>

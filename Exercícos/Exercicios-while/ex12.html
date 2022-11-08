@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Selecione o numero que quer que apareça:
+    <select id="taduada">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+    </select>
+    <input type="number" id="numeroFinal">
+    <button onclick="calcularTabuada()">Ver Tabuada</button>
+    <div id="resultado"></div>
+</body>
+
+</html>
+
+<script>
+    var contador = 1;
+    var cor = "";
+    function calcularTabuada() {
+        resultado.innerHTML = ""
+        var numeroSelecionado = Number(taduada.value);
+        while (contador <= Number(numeroFinal.value)) {
+            mudarCor();
+            resultado.innerHTML += `<span style="color:${cor}">${numeroSelecionado} x ${contador} = ${numeroSelecionado * contador} <br>
+                </span>`;
+            contador++;
+        }
+        contador = 1
+
+    }
+
+    function mudarCor() {
+        if (contador % 2 == 0) {
+            cor = "blue";
+        } else {
+            cor = "red"
+        }
+    }
+</script>

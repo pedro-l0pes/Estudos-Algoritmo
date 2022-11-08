@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    qtd_titulos: <input type="number" id="qtd_titulos">
+    <button onclick="mundiais()">Ver troféus de mundiais FIFA</button>
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    function mundiais() {
+        resultado.innerHTML = ""
+        if (Number(qtd_titulos.value)>0){
+            var contador = 0;
+            while (contador < Number(qtd_titulos.value)) {
+                resultado.innerHTML += `<img src="https://diariodonordeste.verdesmares.com.br/image/contentid/policy:1.3186457:1643506009/Taca-do-Mundial-de-Clubes.jpg?f=16x9&h=720&q=0.8&w=1280&$p$f$h$q$w=493ee38"><br>`;
+                contador += 1
+            }
+        }else {
+            resultado.innerHTML = `<img src="https://ep00.epimg.net/brasil/imagenes/2014/07/09/album/1404859634_108557_1404859875_album_normal.jpg">`;
+        }
+        
+    }
+</script>

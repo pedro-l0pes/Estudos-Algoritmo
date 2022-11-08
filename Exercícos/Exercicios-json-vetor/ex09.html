@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 09</title>
+</head>
+<body>
+    Linha <input type="text" id="ipt_linha"><br>
+    <button onclick="gravar()">Gravar Linha </button><br>
+    <button onclick="pesquisar()">Pesquisar </button>
+
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    listaLinhas = [];
+    function gravar (){
+        listaLinhas.push(ipt_linha.value.trim());
+        mostrar();
+    }
+    function mostrar (){
+        resultado.innerHTML = "";
+        for(var i = 0; i < listaLinhas.length; i++){
+            resultado.innerHTML += `${listaLinhas[i]}<br>`
+        }
+    }
+    function pesquisar (){
+        
+        mostrar();
+        var qtdAparicoes = 0;
+        var aparicoes = "";
+         
+        for (var i = 0; i < listaLinhas.length; i++){
+            if (listaLinhas[i] == ipt_linha.value.trim()){
+                qtdAparicoes++;
+                if (qtdAparicoes == 1){
+                    aparicoes += `${i+1}`;
+                }else{
+                    aparicoes += `, ${i+1}`;
+                }
+            }
+         }
+        if (qtdAparicoes > 0) {
+            resultado.innerHTML += `Você já pegou essa linha ${qtdAparicoes} vezes, nessa ordem: ${aparicoes}`;
+        }else {
+            resultado.innerHTML += `Você nunca pegou essa linha`;
+        }
+    }
+</script>

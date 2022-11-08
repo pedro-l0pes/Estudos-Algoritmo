@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    NOTA 1: <input type="number" id="n1"> <br><br>
+    NOTA 2: <input type="number" id="n2"> <br><br>
+    NOTA 3: <input type="number" id="n3"> <br><br>
+
+    <button onclick="analizar_desempenho()">
+        Analisar desempenho
+    </button>
+
+    <div id="resultado"></div>
+</body>
+</html>
+<script>
+    function analizar_desempenho(){
+        var media = (Number(n1.value) + Number(n2.value) + Number(n3.value))/3;
+
+        resultado.innerHTML = `<b>Sua média foi de ${media}</b><br>`;
+
+        if (media > 9.4) {
+            resultado.innerHTML += "<b>Parabéns, você é fora de série!<b>";
+        }
+
+    }
+</script>

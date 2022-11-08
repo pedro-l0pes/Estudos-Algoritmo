@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nota: <input type="text" id="nota"><br><br>
+    <button onclick="verificar_nota()">Classificar aluno</button>
+    <div id="resultado"></div>
+</body>
+</html>
+<script>
+    function verificar_nota() {
+    //     a) Solicite a nota do aluno;
+    //     b) Ao clicar em "Classificar aluno", exiba uma dessas mensagens num alert:
+    //   "Aluno precisa de muita ajuda", caso a nota for menor que 5.
+    //   "Aluno na média", caso a nota for entre 5 até 7.
+    //   "Aluno na acima da média", caso a nota for maior que 7 até 9.5.
+    //   "Aluno fora da curva", caso a nota for maior que 9.5.
+                
+        
+        if (Number(nota.value) < 5) {
+            alert('Aluno precisa de muita ajuda');
+        }else if (Number(nota.value) <= 7){
+            alert('Aluno na média');
+        }else if (Number(nota.value) <= 9.5){
+            alert('Aluno na acima da média')
+        }
+        else{
+            alert('Aluno fora da curva')
+        }
+    }
+</script>

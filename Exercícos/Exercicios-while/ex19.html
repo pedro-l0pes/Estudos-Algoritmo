@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    ônibus precisa pegar: <input type="text" id="onibus_input">
+    trens precisa pegar: <input type="text" id="trens_input">
+    metrôs precisa pegar: <input type="text" id="metros_input">
+    <br>
+    <button onclick="trajeto()">
+        "#Partiu Trajeto"
+    </button>
+
+    <div id="resultado">
+    </div>
+
+</body>
+</html>
+
+<script>
+    var contador;
+    var frase;
+    function trajeto(){
+        resultado.innerHTML = "";
+        
+        contador = 1;
+        while (contador <= Number(onibus_input.value)){
+            verficarCansaso();
+            resultado.innerHTML += `<span style="color:red">Pegando o ${contador}º busão`+frase;
+            contador++;
+        }
+        contador = 1;
+        while (contador <= Number(trens_input.value)){
+            verficarCansaso();
+            resultado.innerHTML += `<span style="color:green">Pegando o ${contador}º tren`+frase;
+            contador++;
+        }
+        contador = 1;
+        while (contador <= Number(metros_input.value)){
+            verficarCansaso()
+            resultado.innerHTML += `<span style="color:blue">Pegando o ${contador}º metro`+frase;
+            contador++;
+        }
+        
+    }
+
+    function verficarCansaso() {
+        
+        if (contador == 2) {
+            frase = "<br>Começando a cansar</span><br>";
+        }else if (contador >= 3){
+            frase = "<br>Já cansado!</span><br>";
+        }else {
+            frase = "</span><br>";
+        }
+    }
+</script>

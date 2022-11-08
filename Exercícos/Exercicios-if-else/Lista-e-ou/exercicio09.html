@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select  id="tipo">
+        <option value="1">Integral</option>
+        <option value="2">Tradicional</option>
+    </select>
+    tempo de cozimento: <input type="text" id="tempo">
+    quantidade de sal: <input type="text" id="qtd_sal">
+
+    <button onclick="avaliar_arroz()">Avaliar arroz</button>
+
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    function avaliar_arroz(){    if ((tipo.value == "1" && Number(tempo.value) == 20 && Number(qtd_sal.value) <= 15) || 
+    (tipo.value == "2" && Number(tempo.value) == 10 && Number(qtd_sal.value) <= 10)) {
+        if (tipo.value == "1" ){
+            resultado.innerHTML = "<img src='integral.jpg'>";
+        }
+        else{
+            resultado.innerHTML = "<img src='normal.jpg'>" ;
+        }
+    } else {
+        resultado.innerHTML = "Seu arroz não está perfeito";
+    }}
+</script>
